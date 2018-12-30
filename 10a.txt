@@ -1,0 +1,18 @@
+//List name of customer, no. of orders placed by each customer residing in Bangalore city.
+
+Select Cname,count(Ono) 
+from CUSTOMER,ORDER1 
+where Ocno=Cno and Ccity=’Bangalore’ 
+group by Cname;
+
+//List the names of customers who have ordered at least 10 items.
+
+Select Cname,count(*) 
+from CUSTOMER,ORDER1
+where Ocno=Cno group by Cname having count(*)>=10;
+
+//List the customer names who have not ordered for item no. 10
+
+Select distinct(Cname) 
+from ORDER1,CUSTOMER,ORDER_ITEM 
+where  Ono=Iono and Ocno=Cno and Iono!=10;
