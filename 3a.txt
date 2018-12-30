@@ -1,0 +1,9 @@
+SELECT eid
+FROM employees
+WHERE salary=(SELECT MAX(salary) FROM employees);
+
+
+
+SELECT distinct aname
+FROM aircraft a,certified c,employees e
+WHERE a.aid=c.aid and c.eid=e.eid and e.salary>50000;
