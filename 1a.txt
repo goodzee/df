@@ -1,0 +1,15 @@
+select distinct(Sname) 
+from sailors,boats,reserves 
+where sailors.Sid=reserves.Sid and boats.Bid=reserves.Bid;
+
+
+
+select R.sid from boats B,reserves R where R.Bid=B.Bid and B.Bcolour=‘Red’ UNION
+select R1.Sid from boats B1,reserves R1 where R1.Bid=B1.Bid and B1.Bcolour= ‘Green’;
+
+
+
+select Sid from sailors 
+where Sname NOT IN(select Sname 
+from sailors,boats,reserves 
+where sailors.Sid=reserves.Sid and boats.Bid=reserves.Bid);
