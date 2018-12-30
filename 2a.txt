@@ -1,0 +1,4 @@
+select MAX(Salary),Fname,Lname from EMPLOYEE where Dno=5;
+
+
+SELECT DISTINCT(ESSN) FROM WORKS_ON WHERE PNO IN (1, 2, 3);
