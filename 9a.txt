@@ -1,0 +1,16 @@
+//List the customer names who have placed more than 2 orders
+
+Select Cname FROM CUSTOMER
+where  (Select count(Ono) from ORDER1 where Cno=Ocno)>=2;
+
+//Find the total order amount for each day.
+
+Select Odate,SUM(Oamt) 
+from ORDER1 
+group by Odate;
+
+//List customer details who has the largest order amount.
+
+Select Cno,Cname,Ccity 
+from CUSTOMER,ORDER1 
+where Cno=Ocno and Oamt in(select max(Oamt) from ORDER1);
