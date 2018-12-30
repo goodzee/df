@@ -1,0 +1,18 @@
+SELECT Distinct S.Sid
+FROM SUPPLIER S, PART P,SHIPMENT C
+WHERE C.Sid = S.Sid and P.PID = C.PID AND P.Color like 'Green';
+
+
+
+SELECT S.Sname, COUNT(*) as PartCount
+FROM SUPPLIER S, SHIPMENT C, PART P
+WHERE C.Sid = S.Sid and P.PID = C.PID
+GROUP BY S.Sname, S.Sid;
+
+
+
+UPDATE PART
+SET Color='Yellow'
+WHERE PID IN(Select C.PID From PART P,SUPPLIER S,SHIPMENT C 
+Where C.Sid = S.Sid and P.PID = C.PID and C.Sid=3);
+Select * from PART;
