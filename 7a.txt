@@ -1,0 +1,7 @@
+Select Odid,count(*) as no_of_cars from OWNS group by Odid;
+
+
+Select Pregno,Model from CAR, PARTICIPATED where Pregno=Regno and Damage in (select max(Damage) from PARTICIPATED);
+
+
+Select distinct (Pregno) from PARTICIPATED;
